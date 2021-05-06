@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8EC2B2D4264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D3264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift */; };
+		8EC2B2D6264441A700D36F08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D5264441A700D36F08 /* ContentView.swift */; };
+		8EC2B2D8264441A800D36F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D7264441A800D36F08 /* Assets.xcassets */; };
+		8EC2B2DB264441A800D36F08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2B2DA264441A800D36F08 /* Preview Assets.xcassets */; };
+		8EC2B2E6264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2E5264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift */; };
+		8EC2B2F1264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2F0264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8EC2B2E2264441A900D36F08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EC2B2CF264441A700D36F08;
+			remoteInfo = "amazingtalker-ios-ArthurKao";
+		};
+		8EC2B2ED264441A900D36F08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EC2B2CF264441A700D36F08;
+			remoteInfo = "amazingtalker-ios-ArthurKao";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8EC2B2D0264441A700D36F08 /* amazingtalker-ios-ArthurKao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amazingtalker-ios-ArthurKao.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC2B2D3264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_ArthurKaoApp.swift; sourceTree = "<group>"; };
+		8EC2B2D5264441A700D36F08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8EC2B2D7264441A800D36F08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EC2B2DA264441A800D36F08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8EC2B2DC264441A800D36F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC2B2E1264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amazingtalker-ios-ArthurKaoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC2B2E5264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_ArthurKaoTests.swift; sourceTree = "<group>"; };
+		8EC2B2E7264441A900D36F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amazingtalker-ios-ArthurKaoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EC2B2F0264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_ArthurKaoUITests.swift; sourceTree = "<group>"; };
+		8EC2B2F2264441A900D36F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8EC2B2CD264441A700D36F08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC2B2DE264441A900D36F08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC2B2E9264441A900D36F08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8EC2B2C7264441A700D36F08 = {
+			isa = PBXGroup;
+			children = (
+				8EC2B2D2264441A700D36F08 /* amazingtalker-ios-ArthurKao */,
+				8EC2B2E4264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */,
+				8EC2B2EF264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */,
+				8EC2B2D1264441A700D36F08 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8EC2B2D1264441A700D36F08 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EC2B2D0264441A700D36F08 /* amazingtalker-ios-ArthurKao.app */,
+				8EC2B2E1264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests.xctest */,
+				8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8EC2B2D2264441A700D36F08 /* amazingtalker-ios-ArthurKao */ = {
+			isa = PBXGroup;
+			children = (
+				8EC2B2D3264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift */,
+				8EC2B2D5264441A700D36F08 /* ContentView.swift */,
+				8EC2B2D7264441A800D36F08 /* Assets.xcassets */,
+				8EC2B2DC264441A800D36F08 /* Info.plist */,
+				8EC2B2D9264441A800D36F08 /* Preview Content */,
+			);
+			path = "amazingtalker-ios-ArthurKao";
+			sourceTree = "<group>";
+		};
+		8EC2B2D9264441A800D36F08 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8EC2B2DA264441A800D36F08 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8EC2B2E4264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */ = {
+			isa = PBXGroup;
+			children = (
+				8EC2B2E5264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift */,
+				8EC2B2E7264441A900D36F08 /* Info.plist */,
+			);
+			path = "amazingtalker-ios-ArthurKaoTests";
+			sourceTree = "<group>";
+		};
+		8EC2B2EF264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8EC2B2F0264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift */,
+				8EC2B2F2264441A900D36F08 /* Info.plist */,
+			);
+			path = "amazingtalker-ios-ArthurKaoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC2B2F5264441A900D36F08 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-ArthurKao" */;
+			buildPhases = (
+				8EC2B2CC264441A700D36F08 /* Sources */,
+				8EC2B2CD264441A700D36F08 /* Frameworks */,
+				8EC2B2CE264441A700D36F08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "amazingtalker-ios-ArthurKao";
+			productName = "amazingtalker-ios-ArthurKao";
+			productReference = 8EC2B2D0264441A700D36F08 /* amazingtalker-ios-ArthurKao.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8EC2B2E0264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC2B2F8264441A900D36F08 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-ArthurKaoTests" */;
+			buildPhases = (
+				8EC2B2DD264441A900D36F08 /* Sources */,
+				8EC2B2DE264441A900D36F08 /* Frameworks */,
+				8EC2B2DF264441A900D36F08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EC2B2E3264441A900D36F08 /* PBXTargetDependency */,
+			);
+			name = "amazingtalker-ios-ArthurKaoTests";
+			productName = "amazingtalker-ios-ArthurKaoTests";
+			productReference = 8EC2B2E1264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8EC2B2EB264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EC2B2FB264441A900D36F08 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-ArthurKaoUITests" */;
+			buildPhases = (
+				8EC2B2E8264441A900D36F08 /* Sources */,
+				8EC2B2E9264441A900D36F08 /* Frameworks */,
+				8EC2B2EA264441A900D36F08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8EC2B2EE264441A900D36F08 /* PBXTargetDependency */,
+			);
+			name = "amazingtalker-ios-ArthurKaoUITests";
+			productName = "amazingtalker-ios-ArthurKaoUITests";
+			productReference = 8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8EC2B2C8264441A700D36F08 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					8EC2B2CF264441A700D36F08 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					8EC2B2E0264441A900D36F08 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 8EC2B2CF264441A700D36F08;
+					};
+					8EC2B2EB264441A900D36F08 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 8EC2B2CF264441A700D36F08;
+					};
+				};
+			};
+			buildConfigurationList = 8EC2B2CB264441A700D36F08 /* Build configuration list for PBXProject "amazingtalker-ios-ArthurKao" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8EC2B2C7264441A700D36F08;
+			productRefGroup = 8EC2B2D1264441A700D36F08 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */,
+				8EC2B2E0264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */,
+				8EC2B2EB264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8EC2B2CE264441A700D36F08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC2B2DB264441A800D36F08 /* Preview Assets.xcassets in Resources */,
+				8EC2B2D8264441A800D36F08 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC2B2DF264441A900D36F08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC2B2EA264441A900D36F08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8EC2B2CC264441A700D36F08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC2B2D6264441A700D36F08 /* ContentView.swift in Sources */,
+				8EC2B2D4264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC2B2DD264441A900D36F08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC2B2E6264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EC2B2E8264441A900D36F08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EC2B2F1264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8EC2B2E3264441A900D36F08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */;
+			targetProxy = 8EC2B2E2264441A900D36F08 /* PBXContainerItemProxy */;
+		};
+		8EC2B2EE264441A900D36F08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */;
+			targetProxy = 8EC2B2ED264441A900D36F08 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8EC2B2F3264441A900D36F08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8EC2B2F4264441A900D36F08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8EC2B2F6264441A900D36F08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_ASSET_PATHS = "\"amazingtalker-ios-ArthurKao/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "amazingtalker-ios-ArthurKao/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-ArthurKao";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8EC2B2F7264441A900D36F08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_ASSET_PATHS = "\"amazingtalker-ios-ArthurKao/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "amazingtalker-ios-ArthurKao/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-ArthurKao";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8EC2B2F9264441A900D36F08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "amazingtalker-ios-ArthurKaoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-ArthurKaoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amazingtalker-ios-ArthurKao.app/amazingtalker-ios-ArthurKao";
+			};
+			name = Debug;
+		};
+		8EC2B2FA264441A900D36F08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "amazingtalker-ios-ArthurKaoTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-ArthurKaoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amazingtalker-ios-ArthurKao.app/amazingtalker-ios-ArthurKao";
+			};
+			name = Release;
+		};
+		8EC2B2FC264441A900D36F08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "amazingtalker-ios-ArthurKaoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-ArthurKaoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "amazingtalker-ios-ArthurKao";
+			};
+			name = Debug;
+		};
+		8EC2B2FD264441A900D36F08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "amazingtalker-ios-ArthurKaoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-ArthurKaoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "amazingtalker-ios-ArthurKao";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8EC2B2CB264441A700D36F08 /* Build configuration list for PBXProject "amazingtalker-ios-ArthurKao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC2B2F3264441A900D36F08 /* Debug */,
+				8EC2B2F4264441A900D36F08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EC2B2F5264441A900D36F08 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-ArthurKao" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC2B2F6264441A900D36F08 /* Debug */,
+				8EC2B2F7264441A900D36F08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EC2B2F8264441A900D36F08 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-ArthurKaoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC2B2F9264441A900D36F08 /* Debug */,
+				8EC2B2FA264441A900D36F08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EC2B2FB264441A900D36F08 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-ArthurKaoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EC2B2FC264441A900D36F08 /* Debug */,
+				8EC2B2FD264441A900D36F08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8EC2B2C8264441A700D36F08 /* Project object */;
+}
