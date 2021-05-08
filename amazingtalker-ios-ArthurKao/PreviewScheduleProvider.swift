@@ -8,6 +8,7 @@
 import Foundation
 import UIKit.NSDataAsset
 import amazingtalker_ios_network
+import Combine
 
 struct PreviewScheduleItem: ScheduleItemType {
     let booked: Bool
@@ -18,8 +19,11 @@ struct PreviewScheduleProvider: ScheduleProviderType {
 
     let result: Result<[PreviewScheduleItem], Error>
 
-    func fetch(startAt: Date, completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void)) {
-        completion(result.map { $0 })
+    func fetch(startAt: Date) -> AnyPublisher<[ScheduleItemType], Error> {
+        Future { [result = self.result] promise in
+            promise(result.map { $0 })
+        }
+        .eraseToAnyPublisher()
     }
 
     init(_ result: Result<[PreviewScheduleItem], Error> = .success(PreviewScheduleProvider.defaultItems)) {

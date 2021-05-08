@@ -7,6 +7,7 @@
 
 import Foundation
 import amazingtalker_ios_network
+import Combine
 
 extension ScheduleItem: ScheduleItemType {}
 
@@ -20,9 +21,9 @@ class NetworkScheduleProvider: ScheduleProviderType {
 
     private let manager = NetworkManager()
 
-    func fetch(startAt: Date, completion: @escaping ((Result<[ScheduleItemType], Swift.Error>) -> Void)) {
-        manager.retrieveSchedule(teacher: teacher, startAt: startAt) { result in
-            completion(result.map { $0 })
-        }
+    func fetch(startAt: Date) -> AnyPublisher<[ScheduleItemType], Error> {
+        manager.retrieveSchedule(teacher: teacher, startAt: startAt)
+            .map { items in items.map { item in item as ScheduleItemType } }
+            .eraseToAnyPublisher()
     }
 }
