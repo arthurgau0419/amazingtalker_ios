@@ -73,6 +73,17 @@ struct ContentView: View {
             }
             .padding()
         }
+        .gesture(
+            DragGesture(minimumDistance: 0, coordinateSpace: .local)
+                .onEnded { value in
+                    if value.translation.width < 0 {
+                        state.nextWeek()
+                    }
+                    if value.translation.width > 0 {
+                        state.previousWeek()
+                    }
+                }
+        )
         .overlay(
             Group {
                 if state.isLoading {
