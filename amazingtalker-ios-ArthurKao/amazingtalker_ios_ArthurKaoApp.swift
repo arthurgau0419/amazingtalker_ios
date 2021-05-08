@@ -11,11 +11,16 @@ import SwiftUI
 struct amazingtalker_ios_ArthurKaoApp: App {
 
     @StateObject
-    var state = ScheduleState()
+    var state = ScheduleState(
+        referenceDate: DateComponents(calendar: .current, year: 2020, month: 11, day: 23).date!,
+        hidePassItems: false,
+        provider: NetworkScheduleProvider()
+    )
 
     var body: some Scene {
         WindowGroup {
             ContentView(state: state)
+                .colorScheme(.light)
         }
     }
 }

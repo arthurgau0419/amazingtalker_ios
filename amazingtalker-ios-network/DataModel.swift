@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct Schedule: Decodable {
+public struct Schedule: Decodable {
     typealias Item = ScheduleItem
 
-    let items: [Item]
+    public let items: [ScheduleItem]
 
     enum CodingKeys: String, CodingKey {
         case available
@@ -21,7 +21,7 @@ struct Schedule: Decodable {
         case start, end
     }
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         var availableContainer = try container.nestedUnkeyedContainer(forKey: .available)
         var bookedContainer = try container.nestedUnkeyedContainer(forKey: .booked)

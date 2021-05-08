@@ -22,12 +22,12 @@ struct ContentView: View {
                     HStack(spacing: 0) {
                         Group {
                             Button(action: {
-                                state.nextWeek()
+                                state.previousWeek()
                             }) {
                                 Image(systemName: "chevron.backward")
                             }
                             Button(action: {
-                                state.previousWeek()
+                                state.nextWeek()
                             }) {
                                 Image(systemName: "chevron.right")
                             }
@@ -57,14 +57,17 @@ struct ContentView: View {
                                 Text(weekdayItem.day)
                             }
                                 .lineLimit(1)
-                            ForEach(Range(1...1)) { _ in
-                                Text("00:00").lineLimit(1)
+                            ForEach(weekdayItem.times) { time in
+                                Text(time.text).lineLimit(1)
                                     .font(.system(size: 13))
+                                    .foregroundColor(time.isBooked ? Color("DisableColor"): .accentColor)
+                                    .padding(.vertical, 1)
                             }
                         }
                         .opacity(weekdayItem.isEnable ? 1 : 182/255)
                     }
                 }
+                .onAppear { state.loadData() }
             }
             .padding()
         }
@@ -73,13 +76,29 @@ struct ContentView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+
+    static var previewDate: Date {
+        DateComponents(calendar: .current, year: 2020, month: 11, day: 23).date!
+    }
+
     static var previews: some View {
         Group {
-            ContentView(state: ScheduleState())
-                .previewDevice(PreviewDevice(rawValue: "iPhone SE2"))
-            ContentView(state: ScheduleState())
-                .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
-                .colorScheme(.dark)
+            ContentView(
+                state: ScheduleState(
+                    referenceDate: previewDate,
+                    hidePassItems: false,
+                    provider: PreviewScheduleProvider()
+                )
+            )
+            .previewDevice(PreviewDevice(rawValue: "iPhone SE2"))
+            ContentView(
+                state: ScheduleState(
+                    referenceDate: previewDate,
+                    hidePassItems: false,
+                    provider: PreviewScheduleProvider()
+                )
+            )
+            .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
         }
     }
 }

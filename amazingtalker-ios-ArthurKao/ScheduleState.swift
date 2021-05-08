@@ -8,15 +8,29 @@
 import Foundation
 import Combine
 
+protocol ScheduleItemType {
+    var booked: Bool { get }
+    var range: ClosedRange<Date> { get }
+}
+
+protocol ScheduleProviderType {
+    func fetch(completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void))
+}
+
 class ScheduleState: ObservableObject {
+
+    let provider: ScheduleProviderType
+    let hidePassItems: Bool
 
     let calendar = Calendar(identifier: .gregorian)
     let year: Int
     var weekOfYear: Int {
         didSet {
-            updateWeekayItems()
+            updateWeekdayItems()
         }
     }
+
+    private var items: [ScheduleItemType]?
 
     @Published
     var weekdayItems: [WeekdayItem] = []
@@ -27,29 +41,53 @@ class ScheduleState: ObservableObject {
     @Published
     var timeZoneName: String = ""
 
-    init(referenceDate: Date = Date()) {
+    init(referenceDate: Date = Date(), hidePassItems: Bool = true, provider: ScheduleProviderType) {
+        self.provider = provider
+        self.hidePassItems = hidePassItems
         let dateComponents = calendar.dateComponents([.weekOfYear, .yearForWeekOfYear], from: referenceDate)
         year = dateComponents.yearForWeekOfYear ?? 1970
         weekOfYear = dateComponents.weekOfYear ?? 0
-        updateWeekayItems()
+        updateWeekdayItems()
     }
 
-    func updateWeekayItems() {
-        let today = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date())) ?? Date()
-        let dates = (1...7).compactMap {
+    private func latest8days() -> [Date] {
+        var dates = (1...7).map {
             DateComponents(calendar: .current, weekday: $0, weekOfYear: self.weekOfYear, yearForWeekOfYear: self.year).date
         }
+        dates.append(DateComponents(calendar: .current, weekday: 1, weekOfYear: self.weekOfYear + 1, yearForWeekOfYear: self.year).date)
+        return dates.compactMap { $0 }
+    }
+
+    func updateWeekdayItems() {
+        let today = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date())) ?? Date()
         let weekdaySymbols = DateFormatter().shortWeekdaySymbols
-        let nextWeekDay1 = DateComponents(calendar: .current, weekday: 1, weekOfYear: self.weekOfYear + 1, yearForWeekOfYear: self.year).date
-        weekdayItems = dates.enumerated().compactMap {
+        let dates = latest8days()
+        let timeFormatter = DateFormatter()
+        timeFormatter.calendar = calendar
+        timeFormatter.dateFormat = "HH:mm"
+
+        weekdayItems = dates.prefix(7).enumerated().compactMap {
             guard let weekdaySymbol = weekdaySymbols?[$0.offset],
                   let day = self.calendar.dateComponents([.day], from: $0.element).day
             else { return nil }
+            let range = $0.element..<dates[$0.offset+1]
+            let now = Date()
+            let times = (self.items ?? []).lazy
+                .filter { item in
+                    (item.range.lowerBound > now) || !self.hidePassItems
+                }
+                .filter { item in
+                    range.overlaps(item.range)
+                }
+                .map { item in
+                    WeekdayItem.Time(text: timeFormatter.string(from: item.range.lowerBound), isBooked: item.booked)
+                }
+
             return WeekdayItem(
                 date: $0.element,
                 day: String(format: "%02ld", day),
                 weekdaySymbol: weekdaySymbol,
-                times: [],
+                times: Array(times),
                 isEnable: $0.element >= today
             )
         }
@@ -59,15 +97,34 @@ class ScheduleState: ObservableObject {
             formatter.timeStyle = .none
             rangeText = formatter.string(from: from, to: to)
         }
-        if let localizedName = calendar.timeZone.localizedName(for: .standard, locale: .current),
+        if let regionCode = Calendar.current.locale?.regionCode,
+           let localizedName = calendar.locale?.localizedString(forRegionCode: regionCode),
            let abbreviation = calendar.timeZone.abbreviation()  {
             timeZoneName = "\(localizedName)(\(abbreviation)"
         }
     }
 
-    func nextWeek() { weekOfYear += 1 }
+    func nextWeek() {
+        weekOfYear += 1
+        loadData()
+    }
 
-    func previousWeek() { weekOfYear -= 1 }
+    func previousWeek() {
+        weekOfYear -= 1
+        loadData()
+    }
+
+    func loadData() {
+        provider.fetch { [weak self] result in
+            switch result {
+            case .success(let items):
+                self?.items = items
+                self?.updateWeekdayItems()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
 
 
@@ -75,10 +132,20 @@ struct WeekdayItem {
     let date: Date
     let day: String
     let weekdaySymbol: String
-    let times: [Date]
+    let times: [Time]
     let isEnable: Bool
+
+    struct Time {
+        let text: String
+        let isBooked: Bool
+    }
 }
 
 extension WeekdayItem: Identifiable {
     var id: Date { date }
 }
+
+extension WeekdayItem.Time: Identifiable {
+    var id: String { text }
+}
+

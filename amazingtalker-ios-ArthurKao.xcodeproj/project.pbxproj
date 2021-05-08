@@ -22,6 +22,8 @@
 		8ED80C28264601910012A334 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C27264601910012A334 /* DataModel.swift */; };
 		8ED80C2A26460C5B0012A334 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2926460C5A0012A334 /* NetworkManager.swift */; };
 		8ED80C2C264612320012A334 /* ScheduleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2B264612320012A334 /* ScheduleState.swift */; };
+		8ED80C2E264636C60012A334 /* PreviewScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2D264636C20012A334 /* PreviewScheduleProvider.swift */; };
+		8ED80C30264636D80012A334 /* NetworkScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +101,8 @@
 		8ED80C27264601910012A334 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8ED80C2926460C5A0012A334 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		8ED80C2B264612320012A334 /* ScheduleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleState.swift; sourceTree = "<group>"; };
+		8ED80C2D264636C20012A334 /* PreviewScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScheduleProvider.swift; sourceTree = "<group>"; };
+		8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkScheduleProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +176,8 @@
 				8EC2B2D3264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift */,
 				8EC2B2D5264441A700D36F08 /* ContentView.swift */,
 				8ED80C2B264612320012A334 /* ScheduleState.swift */,
+				8ED80C2D264636C20012A334 /* PreviewScheduleProvider.swift */,
+				8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */,
 				8EC2B2D7264441A800D36F08 /* Assets.xcassets */,
 				8EC2B2DC264441A800D36F08 /* Info.plist */,
 				8EC2B2D9264441A800D36F08 /* Preview Content */,
@@ -431,6 +437,8 @@
 			files = (
 				8EC2B2D6264441A700D36F08 /* ContentView.swift in Sources */,
 				8EC2B2D4264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift in Sources */,
+				8ED80C2E264636C60012A334 /* PreviewScheduleProvider.swift in Sources */,
+				8ED80C30264636D80012A334 /* NetworkScheduleProvider.swift in Sources */,
 				8ED80C2C264612320012A334 /* ScheduleState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
