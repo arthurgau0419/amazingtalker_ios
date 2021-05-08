@@ -79,6 +79,8 @@ struct ContentView: View {
                     ProgressView()
                 }
             }
+            .transition(.opacity)
+            .animation(.easeInOut)
         )
         .progressViewStyle(CircularProgressViewStyle())
         .background(Color(UIColor.systemBackground).ignoresSafeArea())
