@@ -58,10 +58,12 @@ struct ContentView: View {
                             }
                                 .lineLimit(1)
                             ForEach(weekdayItem.times) { time in
-                                Text(time.text).lineLimit(1)
-                                    .font(.system(size: 13))
-                                    .foregroundColor(time.isBooked ? Color("DisableColor"): .accentColor)
-                                    .padding(.vertical, 1)
+                                if !state.isLoading {
+                                    Text(time.text).lineLimit(1)
+                                        .font(.system(size: 13))
+                                        .foregroundColor(time.isBooked ? Color("DisableColor"): .accentColor)
+                                        .padding(.vertical, 1)
+                                }
                             }
                         }
                         .opacity(weekdayItem.isEnable ? 1 : 182/255)
@@ -71,6 +73,14 @@ struct ContentView: View {
             }
             .padding()
         }
+        .overlay(
+            Group {
+                if state.isLoading {
+                    ProgressView()
+                }
+            }
+        )
+        .progressViewStyle(CircularProgressViewStyle())
         .background(Color(UIColor.systemBackground).ignoresSafeArea())
     }
 }

@@ -33,6 +33,9 @@ class ScheduleState: ObservableObject {
     private var items: [ScheduleItemType]?
 
     @Published
+    var isLoading: Bool = false
+
+    @Published
     var weekdayItems: [WeekdayItem] = []
 
     @Published
@@ -118,7 +121,9 @@ class ScheduleState: ObservableObject {
         guard let queryDate = DateComponents(calendar: calendar, weekOfYear: weekOfYear, yearForWeekOfYear: year).date else {
             return
         }
+        isLoading = true
         provider.fetch(startAt: queryDate) { [weak self] result in
+            self?.isLoading = false
             switch result {
             case .success(let items):
                 self?.items = items
