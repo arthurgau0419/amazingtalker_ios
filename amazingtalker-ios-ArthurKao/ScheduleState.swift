@@ -105,7 +105,7 @@ class ScheduleState: ObservableObject {
         if let regionCode = Calendar.current.locale?.regionCode,
            let localizedName = calendar.locale?.localizedString(forRegionCode: regionCode),
            let abbreviation = calendar.timeZone.abbreviation()  {
-            timeZoneName = "\(localizedName)(\(abbreviation)"
+            timeZoneName = "\(localizedName)(\(abbreviation))"
         }
     }
 

@@ -15,7 +15,7 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Text("授課時間")
+                Text("available_times_label_text")
                     .padding(.bottom, 4)
                     .font(.title)
                 HStack {
@@ -41,7 +41,7 @@ struct ContentView: View {
                     HStack {
                         Text(state.rangeText)
                         Spacer(minLength: 0)
-                        Text("時間以 \(state.timeZoneName) 顯示")
+                        Text("timezone_label_text \(state.timeZoneName)")
                             .font(.system(size: 12))
                     }
                     .lineLimit(1)

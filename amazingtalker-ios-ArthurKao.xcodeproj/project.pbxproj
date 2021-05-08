@@ -24,6 +24,7 @@
 		8ED80C2C264612320012A334 /* ScheduleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2B264612320012A334 /* ScheduleState.swift */; };
 		8ED80C2E264636C60012A334 /* PreviewScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2D264636C20012A334 /* PreviewScheduleProvider.swift */; };
 		8ED80C30264636D80012A334 /* NetworkScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */; };
+		8ED80C33264667BD0012A334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED80C35264667BD0012A334 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,8 @@
 		8ED80C2B264612320012A334 /* ScheduleState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleState.swift; sourceTree = "<group>"; };
 		8ED80C2D264636C20012A334 /* PreviewScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScheduleProvider.swift; sourceTree = "<group>"; };
 		8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkScheduleProvider.swift; sourceTree = "<group>"; };
+		8ED80C34264667BD0012A334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8ED80C36264667C30012A334 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,7 @@
 				8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */,
 				8EC2B2D7264441A800D36F08 /* Assets.xcassets */,
 				8EC2B2DC264441A800D36F08 /* Info.plist */,
+				8ED80C35264667BD0012A334 /* Localizable.strings */,
 				8EC2B2D9264441A800D36F08 /* Preview Content */,
 			);
 			path = "amazingtalker-ios-ArthurKao";
@@ -375,6 +379,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = 8EC2B2C7264441A700D36F08;
 			productRefGroup = 8EC2B2D1264441A700D36F08 /* Products */;
@@ -396,6 +401,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EC2B2DB264441A800D36F08 /* Preview Assets.xcassets in Resources */,
+				8ED80C33264667BD0012A334 /* Localizable.strings in Resources */,
 				8EC2B2D8264441A800D36F08 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,6 +512,18 @@
 			targetProxy = 8ED80C19264600910012A334 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8ED80C35264667BD0012A334 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8ED80C34264667BD0012A334 /* en */,
+				8ED80C36264667C30012A334 /* zh-Hant */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		8EC2B2F3264441A900D36F08 /* Debug */ = {

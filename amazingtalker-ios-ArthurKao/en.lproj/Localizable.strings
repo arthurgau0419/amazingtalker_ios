@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  amazingtalker-ios-ArthurKao
+
+  Created by Arthur Kao on 2021/5/8.
+  
+*/
+
+"available_times_label_text" = "Available times";
+"timezone_label_text %@" = "* All times listed are in your local timezone: %@";

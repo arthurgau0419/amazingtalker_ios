@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  amazingtalker-ios-ArthurKao
+
+  Created by Arthur Kao on 2021/5/8.
+  
+*/
+
+"available_times_label_text" = "授課時間";
+"timezone_label_text %@" = "時間以 %@ 顯示";
