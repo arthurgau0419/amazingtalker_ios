@@ -12,9 +12,7 @@ struct amazingtalker_ios_ArthurKaoApp: App {
 
     @StateObject
     var state = ScheduleState(
-        referenceDate: DateComponents(calendar: .current, year: 2020, month: 11, day: 23).date!,
-        hidePassItems: false,
-        provider: NetworkScheduleProvider()
+        provider: NetworkScheduleProvider(teacher: "amy-estrada")
     )
 
     var body: some Scene {
