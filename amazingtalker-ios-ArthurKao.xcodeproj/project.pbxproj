@@ -11,9 +11,7 @@
 		8EC2B2D6264441A700D36F08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D5264441A700D36F08 /* ContentView.swift */; };
 		8EC2B2D8264441A800D36F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D7264441A800D36F08 /* Assets.xcassets */; };
 		8EC2B2DB264441A800D36F08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2B2DA264441A800D36F08 /* Preview Assets.xcassets */; };
-		8EC2B2E6264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2E5264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift */; };
 		8ED80C0F264600910012A334 /* amazingtalker_ios_network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */; };
-		8ED80C16264600910012A334 /* amazingtalker_ios_networkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C15264600910012A334 /* amazingtalker_ios_networkTests.swift */; };
 		8ED80C18264600910012A334 /* amazingtalker_ios_network.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED80C08264600900012A334 /* amazingtalker_ios_network.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8ED80C1B264600910012A334 /* amazingtalker_ios_network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */; };
 		8ED80C1C264600910012A334 /* amazingtalker_ios_network.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -25,6 +23,8 @@
 		8ED80C2E264636C60012A334 /* PreviewScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2D264636C20012A334 /* PreviewScheduleProvider.swift */; };
 		8ED80C30264636D80012A334 /* NetworkScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */; };
 		8ED80C33264667BD0012A334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED80C35264667BD0012A334 /* Localizable.strings */; };
+		8ED80C382646C0FB0012A334 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C372646C0FB0012A334 /* NetworkManagerTests.swift */; };
+		8ED80C3A2646C50F0012A334 /* ScheduleStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C392646C50F0012A334 /* ScheduleStateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,7 +87,6 @@
 		8EC2B2DA264441A800D36F08 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8EC2B2DC264441A800D36F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EC2B2E1264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amazingtalker-ios-ArthurKaoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8EC2B2E5264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_ArthurKaoTests.swift; sourceTree = "<group>"; };
 		8EC2B2E7264441A900D36F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amazingtalker-ios-ArthurKaoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC2B2F0264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_ArthurKaoUITests.swift; sourceTree = "<group>"; };
@@ -97,7 +96,6 @@
 		8ED80C08264600900012A334 /* amazingtalker_ios_network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = amazingtalker_ios_network.h; sourceTree = "<group>"; };
 		8ED80C09264600900012A334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ED80C0E264600910012A334 /* amazingtalker-ios-networkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amazingtalker-ios-networkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		8ED80C15264600910012A334 /* amazingtalker_ios_networkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_networkTests.swift; sourceTree = "<group>"; };
 		8ED80C17264600910012A334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8ED80C27264601910012A334 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		8ED80C2926460C5A0012A334 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -106,6 +104,8 @@
 		8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkScheduleProvider.swift; sourceTree = "<group>"; };
 		8ED80C34264667BD0012A334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8ED80C36264667C30012A334 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		8ED80C372646C0FB0012A334 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		8ED80C392646C50F0012A334 /* ScheduleStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,7 +200,7 @@
 		8EC2B2E4264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */ = {
 			isa = PBXGroup;
 			children = (
-				8EC2B2E5264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift */,
+				8ED80C392646C50F0012A334 /* ScheduleStateTests.swift */,
 				8EC2B2E7264441A900D36F08 /* Info.plist */,
 			);
 			path = "amazingtalker-ios-ArthurKaoTests";
@@ -230,7 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				8ED80BFF2645FE390012A334 /* DecodableTests.swift */,
-				8ED80C15264600910012A334 /* amazingtalker_ios_networkTests.swift */,
+				8ED80C372646C0FB0012A334 /* NetworkManagerTests.swift */,
 				8ED80C17264600910012A334 /* Info.plist */,
 			);
 			path = "amazingtalker-ios-networkTests";
@@ -453,7 +453,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EC2B2E6264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift in Sources */,
+				8ED80C3A2646C50F0012A334 /* ScheduleStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,7 +478,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8ED80C16264600910012A334 /* amazingtalker_ios_networkTests.swift in Sources */,
+				8ED80C382646C0FB0012A334 /* NetworkManagerTests.swift in Sources */,
 				8ED80C26264600C90012A334 /* DecodableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
