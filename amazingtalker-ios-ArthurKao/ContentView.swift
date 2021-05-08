@@ -69,7 +69,6 @@ struct ContentView: View {
                         .opacity(weekdayItem.isEnable ? 1 : 182/255)
                     }
                 }
-                .onAppear { state.loadData() }
             }
             .padding()
         }

@@ -22,17 +22,20 @@ class ScheduleState: ObservableObject {
     let provider: ScheduleProviderType
     let hidePassItems: Bool
 
-    let calendar = Calendar(identifier: .gregorian)
+    let calendar: Calendar = {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.locale = Locale.current
+        return calendar
+    }()
     let year: Int
-    var weekOfYear: Int {
-        didSet {
-            updateWeekdayItems()
-        }
-    }
 
-    private var items: [ScheduleItemType]?
+    @Published
+    var weekOfYear: Int
+
+    private var items = CurrentValueSubject<[ScheduleItemType], Never>([])
 
     private var fetchScheduleCancellable: AnyCancellable?
+    private var bag = Set<AnyCancellable>()
 
     @Published
     var isLoading: Bool = false
@@ -52,91 +55,113 @@ class ScheduleState: ObservableObject {
         let dateComponents = calendar.dateComponents([.weekOfYear, .yearForWeekOfYear], from: referenceDate)
         year = dateComponents.yearForWeekOfYear ?? 1970
         weekOfYear = dateComponents.weekOfYear ?? 0
-        updateWeekdayItems()
+        observeWeekOfYear()
+        observeItems()
     }
 
-    private func latest8days() -> [Date] {
+    private func latest8days(year: Int, weekOfYear: Int) -> [Date] {
         var dates = (1...7).map {
-            DateComponents(calendar: .current, weekday: $0, weekOfYear: self.weekOfYear, yearForWeekOfYear: self.year).date
+            DateComponents(calendar: .current, weekday: $0, weekOfYear: weekOfYear, yearForWeekOfYear: year).date
         }
-        dates.append(DateComponents(calendar: .current, weekday: 1, weekOfYear: self.weekOfYear + 1, yearForWeekOfYear: self.year).date)
+        dates.append(DateComponents(calendar: .current, weekday: 1, weekOfYear: weekOfYear + 1, yearForWeekOfYear: year).date)
         return dates.compactMap { $0 }
     }
 
-    func updateWeekdayItems() {
-        let today = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date())) ?? Date()
-        let weekdaySymbols = DateFormatter().shortWeekdaySymbols
-        let dates = latest8days()
-        let timeFormatter = DateFormatter()
-        timeFormatter.calendar = calendar
-        timeFormatter.dateFormat = "HH:mm"
+    func observeWeekOfYear() {
+        $weekOfYear
+            .compactMap { [calendar = self.calendar, year = self.year] weekOfYear in
+                DateComponents(calendar: calendar, weekOfYear: weekOfYear, yearForWeekOfYear: year).date
+            }
+            .flatMap { [provider = self.provider, self] date in
+                provider.fetch(startAt: date)
+                    .handleEvents(receiveSubscription: { [weak self] _ in
+                        self?.isLoading = true
+                    }, receiveCompletion: { [weak self] _ in
+                        self?.isLoading = false
+                    })
+            }
+            .replaceError(with: [])
+            .multicast(subject: items)
+            .connect()
+            .store(in: &bag)
+    }
 
-        weekdayItems = dates.prefix(7).enumerated().compactMap {
-            guard let weekdaySymbol = weekdaySymbols?[$0.offset],
-                  let day = self.calendar.dateComponents([.day], from: $0.element).day
-            else { return nil }
-            let range = $0.element..<dates[$0.offset+1]
-            let now = Date()
-            let times = (self.items ?? []).lazy
-                .filter { item in
-                    (item.range.lowerBound > now) || !self.hidePassItems
-                }
-                .filter { item in
-                    range.overlaps(item.range)
-                }
-                .map { item in
-                    WeekdayItem.Time(text: timeFormatter.string(from: item.range.lowerBound), isBooked: item.booked)
-                }
+    func observeItems() {
 
-            return WeekdayItem(
-                date: $0.element,
-                day: String(format: "%02ld", day),
-                weekdaySymbol: weekdaySymbol,
-                times: Array(times),
-                isEnable: $0.element >= today
-            )
-        }
-        if let from = dates.first, let to = dates.last {
-            let formatter = DateIntervalFormatter()
-            formatter.dateStyle = .long
-            formatter.timeStyle = .none
-            rangeText = formatter.string(from: from, to: to)
-        }
-        if let regionCode = Calendar.current.locale?.regionCode,
-           let localizedName = calendar.locale?.localizedString(forRegionCode: regionCode),
-           let abbreviation = calendar.timeZone.abbreviation()  {
-            timeZoneName = "\(localizedName)(\(abbreviation)"
-        }
+        let dates = Publishers.CombineLatest(Just(year), $weekOfYear.eraseToAnyPublisher())
+            .map { year, weekOfYear in
+                self.latest8days(year: year, weekOfYear: weekOfYear)
+            }
+            .share()
+
+        dates.combineLatest(items)
+            .map { [calendar = self.calendar] dates, items in
+                let today = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date())) ?? Date()
+                let weekdaySymbols = DateFormatter().shortWeekdaySymbols
+
+                let timeFormatter = DateFormatter()
+                timeFormatter.calendar = calendar
+                timeFormatter.dateFormat = "HH:mm"
+
+                return dates.prefix(7).enumerated()
+                    .compactMap {
+                        guard let weekdaySymbol = weekdaySymbols?[$0.offset],
+                              let day = self.calendar.dateComponents([.day], from: $0.element).day
+                        else { return nil }
+                        let range = $0.element..<dates[$0.offset+1]
+                        let now = Date()
+                        let times = items
+                            .filter { item in
+                                (item.range.lowerBound > now) || !self.hidePassItems
+                            }
+                            .filter { item in
+                                range.overlaps(item.range)
+                            }
+                            .map { item in
+                                WeekdayItem.Time(text: timeFormatter.string(from: item.range.lowerBound), isBooked: item.booked)
+                            }
+
+                        return WeekdayItem(
+                            date: $0.element,
+                            day: String(format: "%02ld", day),
+                            weekdaySymbol: weekdaySymbol,
+                            times: Array(times),
+                            isEnable: $0.element >= today
+                        )
+                    }
+            }
+            .assign(to: \.weekdayItems, on: self)
+            .store(in: &bag)
+
+        dates
+            .compactMap { dates in
+                guard let from = dates.first, let to = dates.last else { return nil }
+                let formatter = DateIntervalFormatter()
+                formatter.dateStyle = .long
+                formatter.timeStyle = .none
+                return formatter.string(from: from, to: to)
+            }
+            .assign(to: \.rangeText, on: self)
+            .store(in: &bag)
+
+        Just(calendar.locale).compactMap { $0 }
+            .zip(Just(calendar.locale?.regionCode).compactMap { $0 })
+            .compactMap { locale, regionCode in locale.localizedString(forRegionCode: regionCode) }
+            .zip(Just(calendar.timeZone.abbreviation()).compactMap { $0 })
+            .map { locale, abbreviation -> String in
+                "\(locale)(\(abbreviation))"
+            }
+            .assign(to: \.timeZoneName, on: self)
+            .store(in: &bag)
+
     }
 
     func nextWeek() {
         weekOfYear += 1
-        loadData()
     }
 
     func previousWeek() {
         weekOfYear -= 1
-        loadData()
-    }
-
-    func loadData() {
-        guard let queryDate = DateComponents(calendar: calendar, weekOfYear: weekOfYear, yearForWeekOfYear: year).date else {
-            return
-        }
-        isLoading = true
-        fetchScheduleCancellable = provider.fetch(startAt: queryDate)
-            .sink { [weak self] completion in
-                self?.isLoading = false
-                switch completion {
-                case .failure(let error):
-                    print(error)
-                default:
-                    break
-                }
-            } receiveValue: { [weak self] items in
-                self?.items = items
-                self?.updateWeekdayItems()
-            }
     }
 }
 
