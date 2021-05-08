@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @ObservedObject
+    var state: ScheduleState
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -17,10 +21,14 @@ struct ContentView: View {
                 HStack {
                     HStack(spacing: 0) {
                         Group {
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                            Button(action: {
+                                state.nextWeek()
+                            }) {
                                 Image(systemName: "chevron.backward")
                             }
-                            Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/) {
+                            Button(action: {
+                                state.previousWeek()
+                            }) {
                                 Image(systemName: "chevron.right")
                             }
                         }
@@ -30,26 +38,31 @@ struct ContentView: View {
                         .border(Color.gray)
                     }
                     .padding(.vertical, 4)
-                    Text("2021/06/06 - 13")
-                    Spacer()
-                    Text("GMT+08:00")
-                        .font(.system(size: 12))
+                    HStack {
+                        Text(state.rangeText)
+                        Spacer(minLength: 0)
+                        Text("時間以 \(state.timeZoneName) 顯示")
+                            .font(.system(size: 12))
+                    }
+                    .lineLimit(1)
                 }
-                HStack(spacing: 4) {
-                    ForEach(Range(1...7)) { weekDay in
+                HStack(alignment: .top, spacing: 4) {
+                    ForEach(state.weekdayItems) { weekdayItem in
                         VStack(alignment: .center) {
                             Rectangle()
                                 .frame(height: 2)
-                            HStack {
-                                Spacer()
-                                Text("\(weekDay)")
-                                Spacer()
+                                .foregroundColor(weekdayItem.times.isEmpty ? Color("DisableColor"): .accentColor)
+                            Group {
+                                Text(weekdayItem.weekdaySymbol)
+                                Text(weekdayItem.day)
                             }
+                                .lineLimit(1)
                             ForEach(Range(1...1)) { _ in
                                 Text("00:00").lineLimit(1)
                                     .font(.system(size: 13))
                             }
                         }
+                        .opacity(weekdayItem.isEnable ? 1 : 182/255)
                     }
                 }
             }
@@ -62,9 +75,9 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ContentView()
+            ContentView(state: ScheduleState())
                 .previewDevice(PreviewDevice(rawValue: "iPhone SE2"))
-            ContentView()
+            ContentView(state: ScheduleState())
                 .previewDevice(PreviewDevice(rawValue: "iPhone 12 Pro Max"))
                 .colorScheme(.dark)
         }

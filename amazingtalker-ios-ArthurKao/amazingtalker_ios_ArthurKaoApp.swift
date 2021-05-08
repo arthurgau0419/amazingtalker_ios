@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct amazingtalker_ios_ArthurKaoApp: App {
+
+    @StateObject
+    var state = ScheduleState()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(state: state)
         }
     }
 }
