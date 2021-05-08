@@ -122,7 +122,8 @@ class ScheduleState: ObservableObject {
                                 (item.range.lowerBound > now) || !self.hidePassItems
                             }
                             .filter { item in
-                                range.overlaps(item.range)
+                                item.range.lowerBound >= range.lowerBound &&
+                                    item.range.upperBound <= range.upperBound
                             }
                             .map { item in
                                 WeekdayItem.Time(text: timeFormatter.string(from: item.range.lowerBound), isBooked: item.booked)
