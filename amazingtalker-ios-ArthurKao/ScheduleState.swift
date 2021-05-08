@@ -88,11 +88,12 @@ class ScheduleState: ObservableObject {
 
     func observeItems() {
 
-        let dates = Publishers.CombineLatest(Just(year), $weekOfYear.eraseToAnyPublisher())
+        let datesConnectable = Publishers.CombineLatest(Just(year), $weekOfYear.eraseToAnyPublisher())
             .map { year, weekOfYear in
                 self.latest8days(year: year, weekOfYear: weekOfYear)
             }
-            .share()
+            .makeConnectable()
+        let dates = datesConnectable.share()
 
         dates.combineLatest(items)
             .map { [calendar = self.calendar] dates, items in
@@ -133,7 +134,7 @@ class ScheduleState: ObservableObject {
             .assign(to: \.weekdayItems, on: self)
             .store(in: &bag)
 
-        dates
+        dates.map { $0.prefix(7) }
             .compactMap { dates in
                 guard let from = dates.first, let to = dates.last else { return nil }
                 let formatter = DateFormatter()
@@ -156,6 +157,7 @@ class ScheduleState: ObservableObject {
             .assign(to: \.timeZoneName, on: self)
             .store(in: &bag)
 
+        datesConnectable.connect().store(in: &bag)
     }
 
     func nextWeek() {
