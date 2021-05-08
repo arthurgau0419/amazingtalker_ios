@@ -14,7 +14,7 @@ class NetworkScheduleProvider: ScheduleProviderType {
 
     private let manager = NetworkManager()
 
-    func fetch(completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void)) {
+    func fetch(startAt: Date, completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void)) {
         manager.retrieveSchedule { result in
             completion(result.map { $0 })
         }

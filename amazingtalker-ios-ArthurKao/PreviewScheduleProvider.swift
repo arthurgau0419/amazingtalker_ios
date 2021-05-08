@@ -18,7 +18,7 @@ struct PreviewScheduleProvider: ScheduleProviderType {
 
     let result: Result<[PreviewScheduleItem], Error>
 
-    func fetch(completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void)) {
+    func fetch(startAt: Date, completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void)) {
         completion(result.map { $0 })
     }
 

@@ -14,7 +14,7 @@ protocol ScheduleItemType {
 }
 
 protocol ScheduleProviderType {
-    func fetch(completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void))
+    func fetch(startAt: Date, completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void))
 }
 
 class ScheduleState: ObservableObject {
@@ -115,7 +115,10 @@ class ScheduleState: ObservableObject {
     }
 
     func loadData() {
-        provider.fetch { [weak self] result in
+        guard let queryDate = DateComponents(calendar: calendar, weekOfYear: weekOfYear, yearForWeekOfYear: year).date else {
+            return
+        }
+        provider.fetch(startAt: queryDate) { [weak self] result in
             switch result {
             case .success(let items):
                 self?.items = items
