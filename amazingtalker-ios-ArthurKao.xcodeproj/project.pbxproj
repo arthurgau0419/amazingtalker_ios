@@ -12,7 +12,15 @@
 		8EC2B2D8264441A800D36F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D7264441A800D36F08 /* Assets.xcassets */; };
 		8EC2B2DB264441A800D36F08 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2B2DA264441A800D36F08 /* Preview Assets.xcassets */; };
 		8EC2B2E6264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2E5264441A900D36F08 /* amazingtalker_ios_ArthurKaoTests.swift */; };
-		8EC2B2F1264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2F0264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift */; };
+		8ED80C0F264600910012A334 /* amazingtalker_ios_network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */; };
+		8ED80C16264600910012A334 /* amazingtalker_ios_networkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C15264600910012A334 /* amazingtalker_ios_networkTests.swift */; };
+		8ED80C18264600910012A334 /* amazingtalker_ios_network.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED80C08264600900012A334 /* amazingtalker_ios_network.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8ED80C1B264600910012A334 /* amazingtalker_ios_network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */; };
+		8ED80C1C264600910012A334 /* amazingtalker_ios_network.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8ED80C25264600C20012A334 /* amazingtalker_ios_ArthurKaoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2F0264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift */; };
+		8ED80C26264600C90012A334 /* DecodableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80BFF2645FE390012A334 /* DecodableTests.swift */; };
+		8ED80C28264601910012A334 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C27264601910012A334 /* DataModel.swift */; };
+		8ED80C2A26460C5B0012A334 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2926460C5A0012A334 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +38,42 @@
 			remoteGlobalIDString = 8EC2B2CF264441A700D36F08;
 			remoteInfo = "amazingtalker-ios-ArthurKao";
 		};
+		8ED80C10264600910012A334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8ED80C05264600900012A334;
+			remoteInfo = "amazingtalker-ios-network";
+		};
+		8ED80C12264600910012A334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EC2B2CF264441A700D36F08;
+			remoteInfo = "amazingtalker-ios-ArthurKao";
+		};
+		8ED80C19264600910012A334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8ED80C05264600900012A334;
+			remoteInfo = "amazingtalker-ios-network";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8ED80C20264600910012A334 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8ED80C1C264600910012A334 /* amazingtalker_ios_network.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8EC2B2D0264441A700D36F08 /* amazingtalker-ios-ArthurKao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amazingtalker-ios-ArthurKao.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,6 +88,15 @@
 		8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amazingtalker-ios-ArthurKaoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC2B2F0264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_ArthurKaoUITests.swift; sourceTree = "<group>"; };
 		8EC2B2F2264441A900D36F08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ED80BFF2645FE390012A334 /* DecodableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecodableTests.swift; sourceTree = "<group>"; };
+		8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = amazingtalker_ios_network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED80C08264600900012A334 /* amazingtalker_ios_network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = amazingtalker_ios_network.h; sourceTree = "<group>"; };
+		8ED80C09264600900012A334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ED80C0E264600910012A334 /* amazingtalker-ios-networkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "amazingtalker-ios-networkTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8ED80C15264600910012A334 /* amazingtalker_ios_networkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_networkTests.swift; sourceTree = "<group>"; };
+		8ED80C17264600910012A334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8ED80C27264601910012A334 /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
+		8ED80C2926460C5A0012A334 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8ED80C1B264600910012A334 /* amazingtalker_ios_network.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +122,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8ED80C03264600900012A334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED80C0B264600910012A334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED80C0F264600910012A334 /* amazingtalker_ios_network.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +146,8 @@
 				8EC2B2D2264441A700D36F08 /* amazingtalker-ios-ArthurKao */,
 				8EC2B2E4264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */,
 				8EC2B2EF264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */,
+				8ED80C07264600900012A334 /* amazingtalker-ios-network */,
+				8ED80C14264600910012A334 /* amazingtalker-ios-networkTests */,
 				8EC2B2D1264441A700D36F08 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -88,6 +158,8 @@
 				8EC2B2D0264441A700D36F08 /* amazingtalker-ios-ArthurKao.app */,
 				8EC2B2E1264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests.xctest */,
 				8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */,
+				8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */,
+				8ED80C0E264600910012A334 /* amazingtalker-ios-networkTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,7 +202,39 @@
 			path = "amazingtalker-ios-ArthurKaoUITests";
 			sourceTree = "<group>";
 		};
+		8ED80C07264600900012A334 /* amazingtalker-ios-network */ = {
+			isa = PBXGroup;
+			children = (
+				8ED80C08264600900012A334 /* amazingtalker_ios_network.h */,
+				8ED80C09264600900012A334 /* Info.plist */,
+				8ED80C27264601910012A334 /* DataModel.swift */,
+				8ED80C2926460C5A0012A334 /* NetworkManager.swift */,
+			);
+			path = "amazingtalker-ios-network";
+			sourceTree = "<group>";
+		};
+		8ED80C14264600910012A334 /* amazingtalker-ios-networkTests */ = {
+			isa = PBXGroup;
+			children = (
+				8ED80BFF2645FE390012A334 /* DecodableTests.swift */,
+				8ED80C15264600910012A334 /* amazingtalker_ios_networkTests.swift */,
+				8ED80C17264600910012A334 /* Info.plist */,
+			);
+			path = "amazingtalker-ios-networkTests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8ED80C01264600900012A334 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED80C18264600910012A334 /* amazingtalker_ios_network.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */ = {
@@ -140,10 +244,12 @@
 				8EC2B2CC264441A700D36F08 /* Sources */,
 				8EC2B2CD264441A700D36F08 /* Frameworks */,
 				8EC2B2CE264441A700D36F08 /* Resources */,
+				8ED80C20264600910012A334 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8ED80C1A264600910012A334 /* PBXTargetDependency */,
 			);
 			name = "amazingtalker-ios-ArthurKao";
 			productName = "amazingtalker-ios-ArthurKao";
@@ -186,6 +292,43 @@
 			productReference = 8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		8ED80C05264600900012A334 /* amazingtalker-ios-network */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ED80C1D264600910012A334 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-network" */;
+			buildPhases = (
+				8ED80C01264600900012A334 /* Headers */,
+				8ED80C02264600900012A334 /* Sources */,
+				8ED80C03264600900012A334 /* Frameworks */,
+				8ED80C04264600900012A334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "amazingtalker-ios-network";
+			productName = "amazingtalker-ios-network";
+			productReference = 8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		8ED80C0D264600910012A334 /* amazingtalker-ios-networkTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8ED80C21264600910012A334 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-networkTests" */;
+			buildPhases = (
+				8ED80C0A264600910012A334 /* Sources */,
+				8ED80C0B264600910012A334 /* Frameworks */,
+				8ED80C0C264600910012A334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8ED80C11264600910012A334 /* PBXTargetDependency */,
+				8ED80C13264600910012A334 /* PBXTargetDependency */,
+			);
+			name = "amazingtalker-ios-networkTests";
+			productName = "amazingtalker-ios-networkTests";
+			productReference = 8ED80C0E264600910012A334 /* amazingtalker-ios-networkTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,6 +346,14 @@
 						TestTargetID = 8EC2B2CF264441A700D36F08;
 					};
 					8EC2B2EB264441A900D36F08 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 8EC2B2CF264441A700D36F08;
+					};
+					8ED80C05264600900012A334 = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+					};
+					8ED80C0D264600910012A334 = {
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = 8EC2B2CF264441A700D36F08;
 					};
@@ -224,6 +375,8 @@
 				8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */,
 				8EC2B2E0264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */,
 				8EC2B2EB264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */,
+				8ED80C05264600900012A334 /* amazingtalker-ios-network */,
+				8ED80C0D264600910012A334 /* amazingtalker-ios-networkTests */,
 			);
 		};
 /* End PBXProject section */
@@ -246,6 +399,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8EC2B2EA264441A900D36F08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED80C04264600900012A334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED80C0C264600910012A334 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -276,7 +443,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8EC2B2F1264441A900D36F08 /* amazingtalker_ios_ArthurKaoUITests.swift in Sources */,
+				8ED80C25264600C20012A334 /* amazingtalker_ios_ArthurKaoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED80C02264600900012A334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED80C28264601910012A334 /* DataModel.swift in Sources */,
+				8ED80C2A26460C5B0012A334 /* NetworkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8ED80C0A264600910012A334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8ED80C16264600910012A334 /* amazingtalker_ios_networkTests.swift in Sources */,
+				8ED80C26264600C90012A334 /* DecodableTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +477,21 @@
 			isa = PBXTargetDependency;
 			target = 8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */;
 			targetProxy = 8EC2B2ED264441A900D36F08 /* PBXContainerItemProxy */;
+		};
+		8ED80C11264600910012A334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8ED80C05264600900012A334 /* amazingtalker-ios-network */;
+			targetProxy = 8ED80C10264600910012A334 /* PBXContainerItemProxy */;
+		};
+		8ED80C13264600910012A334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */;
+			targetProxy = 8ED80C12264600910012A334 /* PBXContainerItemProxy */;
+		};
+		8ED80C1A264600910012A334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8ED80C05264600900012A334 /* amazingtalker-ios-network */;
+			targetProxy = 8ED80C19264600910012A334 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -415,6 +615,7 @@
 		8EC2B2F6264441A900D36F08 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
@@ -438,6 +639,7 @@
 		8EC2B2F7264441A900D36F08 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Manual;
@@ -538,6 +740,101 @@
 			};
 			name = Release;
 		};
+		8ED80C1E264600910012A334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "amazingtalker-ios-network/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-network";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8ED80C1F264600910012A334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "amazingtalker-ios-network/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-network";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		8ED80C22264600910012A334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "amazingtalker-ios-networkTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-networkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amazingtalker-ios-ArthurKao.app/amazingtalker-ios-ArthurKao";
+			};
+			name = Debug;
+		};
+		8ED80C23264600910012A334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "amazingtalker-ios-networkTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-networkTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/amazingtalker-ios-ArthurKao.app/amazingtalker-ios-ArthurKao";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -573,6 +870,24 @@
 			buildConfigurations = (
 				8EC2B2FC264441A900D36F08 /* Debug */,
 				8EC2B2FD264441A900D36F08 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ED80C1D264600910012A334 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-network" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED80C1E264600910012A334 /* Debug */,
+				8ED80C1F264600910012A334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8ED80C21264600910012A334 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-networkTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8ED80C22264600910012A334 /* Debug */,
+				8ED80C23264600910012A334 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
