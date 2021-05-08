@@ -38,13 +38,13 @@ struct ContentView: View {
                         .border(Color.gray)
                     }
                     .padding(.vertical, 4)
-                    HStack {
-                        Text(state.rangeText)
-                        Spacer(minLength: 0)
-                        Text("timezone_label_text \(state.timeZoneName)")
-                            .font(.system(size: 12))
-                    }
-                    .lineLimit(1)
+                    Text(state.rangeText)
+                        .lineLimit(1)
+                }
+                HStack {
+                    Spacer()
+                    Text("timezone_label_text \(state.timeZoneName)")
+                        .font(.system(size: 12))
                 }
                 HStack(alignment: .top, spacing: 4) {
                     ForEach(state.weekdayItems) { weekdayItem in
