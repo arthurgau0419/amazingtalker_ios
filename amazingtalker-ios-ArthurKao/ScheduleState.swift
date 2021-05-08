@@ -95,10 +95,12 @@ class ScheduleState: ObservableObject {
             )
         }
         if let from = dates.first, let to = dates.last {
-            let formatter = DateIntervalFormatter()
-            formatter.dateStyle = .long
-            formatter.timeStyle = .none
-            rangeText = formatter.string(from: from, to: to)
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd"
+            let fromDate = formatter.string(from: from)
+            formatter.dateFormat = "dd"
+            let toDate = formatter.string(from: to)
+            rangeText = [fromDate, toDate].joined(separator: " - ")
         }
         if let regionCode = Calendar.current.locale?.regionCode,
            let localizedName = calendar.locale?.localizedString(forRegionCode: regionCode),
