@@ -14,7 +14,7 @@ protocol ScheduleItemType {
 }
 
 protocol ScheduleProviderType {
-    func fetch(startAt: Date, completion: @escaping ((Result<[ScheduleItemType], Error>) -> Void))
+    func fetch(startAt: Date) -> AnyPublisher<[ScheduleItemType], Error>
 }
 
 class ScheduleState: ObservableObject {
@@ -31,6 +31,8 @@ class ScheduleState: ObservableObject {
     }
 
     private var items: [ScheduleItemType]?
+
+    private var fetchScheduleCancellable: AnyCancellable?
 
     @Published
     var isLoading: Bool = false
@@ -122,16 +124,19 @@ class ScheduleState: ObservableObject {
             return
         }
         isLoading = true
-        provider.fetch(startAt: queryDate) { [weak self] result in
-            self?.isLoading = false
-            switch result {
-            case .success(let items):
+        fetchScheduleCancellable = provider.fetch(startAt: queryDate)
+            .sink { [weak self] completion in
+                self?.isLoading = false
+                switch completion {
+                case .failure(let error):
+                    print(error)
+                default:
+                    break
+                }
+            } receiveValue: { [weak self] items in
                 self?.items = items
                 self?.updateWeekdayItems()
-            case .failure(let error):
-                print(error)
             }
-        }
     }
 }
 

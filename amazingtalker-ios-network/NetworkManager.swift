@@ -7,12 +7,12 @@
 
 import Foundation
 import class UIKit.NSDataAsset
+import Combine
 
 public class NetworkManager {
 
     enum Error: Swift.Error {
         case formURLFailed
-        case noResponseData
     }
 
     public init() {}
@@ -38,42 +38,27 @@ public class NetworkManager {
         return decoder
     }()
 
-    public func retrieveSchedule(teacher: String, startAt: Date, completion: @escaping ((_ items: Result<[ScheduleItem], Swift.Error>) -> Void)) {
+    public func retrieveSchedule(teacher: String, startAt: Date) -> AnyPublisher<[ScheduleItem], Swift.Error> {
 
         guard let path = "v1/guest/teachers/\(teacher)/schedule".addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else {
-            completion(.failure(Error.formURLFailed))
-            return
+            return Fail(error: Error.formURLFailed).eraseToAnyPublisher()
         }
         let url = host.appendingPathComponent(path)
         guard var components = URLComponents(url: url, resolvingAgainstBaseURL: false) else {
-            completion(.failure(Error.formURLFailed))
-            return
+            return Fail(error: Error.formURLFailed).eraseToAnyPublisher()
         }
         components.queryItems = [URLQueryItem(name: "started_at", value: dateFormatter.string(from: startAt))]
         guard let url = components.url else {
-            completion(.failure(Error.formURLFailed))
-            return
+            return Fail(error: Error.formURLFailed).eraseToAnyPublisher()
         }
 
         let request = URLRequest(url: url)
-        let task = URLSession.shared.dataTask(with: request) { [queue = self.queue] data, response, error in
-            queue.async {
-                if let error = error {
-                    completion(.failure(error))
-                    return
-                }
-                guard let data = data else {
-                    completion(.failure(Error.noResponseData))
-                    return
-                }
-                let result = Result { [decoder = self.decoder] in
-                    try decoder.decode(Schedule.self, from: data).items
-                }
-                DispatchQueue.main.async {
-                    completion(result)
-                }
-            }
-        }
-        task.resume()
+        return URLSession.shared.dataTaskPublisher(for: request)
+            .receive(on: queue)
+            .map(\.data)
+            .decode(type: Schedule.self, decoder: decoder)
+            .map(\.items)
+            .receive(on: DispatchQueue.main)
+            .eraseToAnyPublisher()
     }
 }
