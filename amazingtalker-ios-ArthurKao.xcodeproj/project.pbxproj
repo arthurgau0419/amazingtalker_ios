@@ -166,6 +166,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8E55EC272647E363009F33C2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		8EC2B2D0264441A700D36F08 /* amazingtalker-ios-ArthurKao.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amazingtalker-ios-ArthurKao.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EC2B2D3264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amazingtalker_ios_ArthurKaoApp.swift; sourceTree = "<group>"; };
 		8EC2B2D5264441A700D36F08 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -269,6 +270,7 @@
 		8EC2B2C7264441A700D36F08 = {
 			isa = PBXGroup;
 			children = (
+				8E55EC272647E363009F33C2 /* README.md */,
 				8EC2B2D2264441A700D36F08 /* amazingtalker-ios-ArthurKao */,
 				8EC2B2E4264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */,
 				8EC2B2EF264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */,
