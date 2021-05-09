@@ -7,7 +7,11 @@
 
 import Foundation
 import UIKit.NSDataAsset
+#if os(watchOS)
+import amazingtalker_ios_network_watch
+#else
 import amazingtalker_ios_network
+#endif
 import Combine
 
 struct PreviewScheduleItem: ScheduleItemType {

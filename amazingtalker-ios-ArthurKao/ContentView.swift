@@ -113,7 +113,7 @@ struct ContentView: View {
             .animation(.easeInOut(duration: 0.15))
         )
         .progressViewStyle(CircularProgressViewStyle())
-        .background(Color(UIColor.systemBackground).ignoresSafeArea())
+        .background(Color(UIColor.white).ignoresSafeArea())
     }
 }
 

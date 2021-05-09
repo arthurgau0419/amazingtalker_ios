@@ -6,7 +6,11 @@
 //
 
 import Foundation
+#if os(watchOS)
+import amazingtalker_ios_network_watch
+#else
 import amazingtalker_ios_network
+#endif
 import Combine
 
 extension ScheduleItem: ScheduleItemType {}

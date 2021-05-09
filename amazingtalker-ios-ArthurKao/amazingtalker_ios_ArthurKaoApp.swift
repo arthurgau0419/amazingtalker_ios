@@ -15,6 +15,7 @@ struct amazingtalker_ios_ArthurKaoApp: App {
         provider: NetworkScheduleProvider(teacher: "amy-estrada")
     )
 
+    @SceneBuilder
     var body: some Scene {
         WindowGroup {
             ContentView(state: state)

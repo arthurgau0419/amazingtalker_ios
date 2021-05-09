@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E6B6D3926479BAA0040D05F /* amazingtalker_ios_network_watch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE335B126479485006DB8D6 /* amazingtalker_ios_network_watch.framework */; };
+		8E6B6D3A26479BAA0040D05F /* amazingtalker_ios_network_watch.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8EE335B126479485006DB8D6 /* amazingtalker_ios_network_watch.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8EC2B2D4264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D3264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift */; };
 		8EC2B2D6264441A700D36F08 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D5264441A700D36F08 /* ContentView.swift */; };
 		8EC2B2D8264441A800D36F08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D7264441A800D36F08 /* Assets.xcassets */; };
@@ -25,9 +27,46 @@
 		8ED80C33264667BD0012A334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8ED80C35264667BD0012A334 /* Localizable.strings */; };
 		8ED80C382646C0FB0012A334 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C372646C0FB0012A334 /* NetworkManagerTests.swift */; };
 		8ED80C3A2646C50F0012A334 /* ScheduleStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C392646C50F0012A334 /* ScheduleStateTests.swift */; };
+		8EE3356926479184006DB8D6 /* amazingtalker-watchOS WatchKit App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 8EE3356826479184006DB8D6 /* amazingtalker-watchOS WatchKit App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8EE3356E26479185006DB8D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE3356D26479185006DB8D6 /* Assets.xcassets */; };
+		8EE3357526479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8EE3357426479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8EE3357E26479186006DB8D6 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3357D26479186006DB8D6 /* NotificationController.swift */; };
+		8EE3358026479186006DB8D6 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3357F26479186006DB8D6 /* NotificationView.swift */; };
+		8EE3358226479186006DB8D6 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3358126479186006DB8D6 /* ComplicationController.swift */; };
+		8EE3358426479186006DB8D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE3358326479186006DB8D6 /* Assets.xcassets */; };
+		8EE3358726479186006DB8D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8EE3358626479186006DB8D6 /* Preview Assets.xcassets */; };
+		8EE3359526479246006DB8D6 /* amazingtalker_ios_ArthurKaoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC2B2D3264441A700D36F08 /* amazingtalker_ios_ArthurKaoApp.swift */; };
+		8EE335992647928C006DB8D6 /* NetworkScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2F264636D80012A334 /* NetworkScheduleProvider.swift */; };
+		8EE3359A2647928C006DB8D6 /* ScheduleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2B264612320012A334 /* ScheduleState.swift */; };
+		8EE3359B2647928C006DB8D6 /* PreviewScheduleProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2D264636C20012A334 /* PreviewScheduleProvider.swift */; };
+		8EE335A826479485006DB8D6 /* amazingtalker_ios_network.h in Headers */ = {isa = PBXBuildFile; fileRef = 8ED80C08264600900012A334 /* amazingtalker_ios_network.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8EE335AA26479485006DB8D6 /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C27264601910012A334 /* DataModel.swift */; };
+		8EE335AB26479485006DB8D6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED80C2926460C5A0012A334 /* NetworkManager.swift */; };
+		8EE335B826479594006DB8D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EE3357B26479186006DB8D6 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		8E6B6D3B26479BAA0040D05F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EE335A626479485006DB8D6;
+			remoteInfo = "amazingtalker-ios-network-watch";
+		};
+		8E6B6D3E26479C130040D05F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EE335A626479485006DB8D6;
+			remoteInfo = "amazingtalker-ios-network-watch";
+		};
+		8E6B6D4026479C190040D05F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EE335A626479485006DB8D6;
+			remoteInfo = "amazingtalker-ios-network-watch";
+		};
 		8EC2B2E2264441A900D36F08 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
@@ -63,9 +102,34 @@
 			remoteGlobalIDString = 8ED80C05264600900012A334;
 			remoteInfo = "amazingtalker-ios-network";
 		};
+		8EE3356A26479184006DB8D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EE3356726479184006DB8D6;
+			remoteInfo = "amazingtalker-watchOS WatchKit App";
+		};
+		8EE3357626479186006DB8D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8EC2B2C8264441A700D36F08 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8EE3357326479186006DB8D6;
+			remoteInfo = "amazingtalker-watchOS WatchKit Extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		8E6B6D3D26479BAA0040D05F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				8E6B6D3A26479BAA0040D05F /* amazingtalker_ios_network_watch.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8ED80C20264600910012A334 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -75,6 +139,28 @@
 				8ED80C1C264600910012A334 /* amazingtalker_ios_network.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE3358D26479186006DB8D6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8EE3357526479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE3359126479186006DB8D6 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				8EE3356926479184006DB8D6 /* amazingtalker-watchOS WatchKit App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -107,6 +193,21 @@
 		8ED80C372646C0FB0012A334 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		8ED80C392646C50F0012A334 /* ScheduleStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleStateTests.swift; sourceTree = "<group>"; };
 		8EE33562264707D7006DB8D6 /* amazingtalker-ios-ArthurKao.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "amazingtalker-ios-ArthurKao.entitlements"; sourceTree = "<group>"; };
+		8EE3356526479184006DB8D6 /* amazingtalker-watchOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amazingtalker-watchOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE3356826479184006DB8D6 /* amazingtalker-watchOS WatchKit App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "amazingtalker-watchOS WatchKit App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE3356D26479185006DB8D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EE3356F26479185006DB8D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EE3357426479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "amazingtalker-watchOS WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE3357B26479186006DB8D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8EE3357D26479186006DB8D6 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		8EE3357F26479186006DB8D6 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		8EE3358126479186006DB8D6 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		8EE3358326479186006DB8D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8EE3358626479186006DB8D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		8EE3358826479186006DB8D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8EE3358926479186006DB8D6 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		8EE335B126479485006DB8D6 /* amazingtalker_ios_network_watch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = amazingtalker_ios_network_watch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EE335B226479485006DB8D6 /* amazingtalker-ios-network copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "amazingtalker-ios-network copy-Info.plist"; path = "/Users/arthur/ObiCat/amazingtalker-ios-ArthurKao/amazingtalker-ios-network copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +248,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EE3357126479186006DB8D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E6B6D3926479BAA0040D05F /* amazingtalker_ios_network_watch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE335AC26479485006DB8D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -158,7 +274,11 @@
 				8EC2B2EF264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */,
 				8ED80C07264600900012A334 /* amazingtalker-ios-network */,
 				8ED80C14264600910012A334 /* amazingtalker-ios-networkTests */,
+				8EE3356C26479184006DB8D6 /* amazingtalker-watchOS WatchKit App */,
+				8EE3357826479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension */,
 				8EC2B2D1264441A700D36F08 /* Products */,
+				8EE335A0264793BA006DB8D6 /* Frameworks */,
+				8EE335B226479485006DB8D6 /* amazingtalker-ios-network copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,6 +290,10 @@
 				8EC2B2EC264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests.xctest */,
 				8ED80C06264600900012A334 /* amazingtalker_ios_network.framework */,
 				8ED80C0E264600910012A334 /* amazingtalker-ios-networkTests.xctest */,
+				8EE3356526479184006DB8D6 /* amazingtalker-watchOS.app */,
+				8EE3356826479184006DB8D6 /* amazingtalker-watchOS WatchKit App.app */,
+				8EE3357426479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension.appex */,
+				8EE335B126479485006DB8D6 /* amazingtalker_ios_network_watch.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -238,6 +362,45 @@
 			path = "amazingtalker-ios-networkTests";
 			sourceTree = "<group>";
 		};
+		8EE3356C26479184006DB8D6 /* amazingtalker-watchOS WatchKit App */ = {
+			isa = PBXGroup;
+			children = (
+				8EE3356D26479185006DB8D6 /* Assets.xcassets */,
+				8EE3356F26479185006DB8D6 /* Info.plist */,
+			);
+			path = "amazingtalker-watchOS WatchKit App";
+			sourceTree = "<group>";
+		};
+		8EE3357826479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension */ = {
+			isa = PBXGroup;
+			children = (
+				8EE3357B26479186006DB8D6 /* ContentView.swift */,
+				8EE3357D26479186006DB8D6 /* NotificationController.swift */,
+				8EE3357F26479186006DB8D6 /* NotificationView.swift */,
+				8EE3358126479186006DB8D6 /* ComplicationController.swift */,
+				8EE3358326479186006DB8D6 /* Assets.xcassets */,
+				8EE3358826479186006DB8D6 /* Info.plist */,
+				8EE3358926479186006DB8D6 /* PushNotificationPayload.apns */,
+				8EE3358526479186006DB8D6 /* Preview Content */,
+			);
+			path = "amazingtalker-watchOS WatchKit Extension";
+			sourceTree = "<group>";
+		};
+		8EE3358526479186006DB8D6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				8EE3358626479186006DB8D6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		8EE335A0264793BA006DB8D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -246,6 +409,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8ED80C18264600910012A334 /* amazingtalker_ios_network.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE335A726479485006DB8D6 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE335A826479485006DB8D6 /* amazingtalker_ios_network.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +515,79 @@
 			productReference = 8ED80C0E264600910012A334 /* amazingtalker-ios-networkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8EE3356426479184006DB8D6 /* amazingtalker-watchOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE3359226479186006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-watchOS" */;
+			buildPhases = (
+				8EE3356326479184006DB8D6 /* Resources */,
+				8EE3359126479186006DB8D6 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E6B6D3F26479C130040D05F /* PBXTargetDependency */,
+				8EE3356B26479184006DB8D6 /* PBXTargetDependency */,
+			);
+			name = "amazingtalker-watchOS";
+			productName = "amazingtalker-watchOS";
+			productReference = 8EE3356526479184006DB8D6 /* amazingtalker-watchOS.app */;
+			productType = "com.apple.product-type.application.watchapp2-container";
+		};
+		8EE3356726479184006DB8D6 /* amazingtalker-watchOS WatchKit App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE3358E26479186006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-watchOS WatchKit App" */;
+			buildPhases = (
+				8EE3356626479184006DB8D6 /* Resources */,
+				8EE3358D26479186006DB8D6 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E6B6D4126479C190040D05F /* PBXTargetDependency */,
+				8EE3357726479186006DB8D6 /* PBXTargetDependency */,
+			);
+			name = "amazingtalker-watchOS WatchKit App";
+			productName = "amazingtalker-watchOS WatchKit App";
+			productReference = 8EE3356826479184006DB8D6 /* amazingtalker-watchOS WatchKit App.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		8EE3357326479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE3358A26479186006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-watchOS WatchKit Extension" */;
+			buildPhases = (
+				8EE3357026479186006DB8D6 /* Sources */,
+				8EE3357126479186006DB8D6 /* Frameworks */,
+				8EE3357226479186006DB8D6 /* Resources */,
+				8E6B6D3D26479BAA0040D05F /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E6B6D3C26479BAA0040D05F /* PBXTargetDependency */,
+			);
+			name = "amazingtalker-watchOS WatchKit Extension";
+			productName = "amazingtalker-watchOS WatchKit Extension";
+			productReference = 8EE3357426479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
+		8EE335A626479485006DB8D6 /* amazingtalker-ios-network-watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8EE335AE26479485006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-network-watch" */;
+			buildPhases = (
+				8EE335A726479485006DB8D6 /* Headers */,
+				8EE335A926479485006DB8D6 /* Sources */,
+				8EE335AC26479485006DB8D6 /* Frameworks */,
+				8EE335AD26479485006DB8D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "amazingtalker-ios-network-watch";
+			productName = "amazingtalker-ios-network";
+			productReference = 8EE335B126479485006DB8D6 /* amazingtalker_ios_network_watch.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -372,6 +616,15 @@
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = 8EC2B2CF264441A700D36F08;
 					};
+					8EE3356426479184006DB8D6 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					8EE3356726479184006DB8D6 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					8EE3357326479186006DB8D6 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 				};
 			};
 			buildConfigurationList = 8EC2B2CB264441A700D36F08 /* Build configuration list for PBXProject "amazingtalker-ios-ArthurKao" */;
@@ -392,7 +645,11 @@
 				8EC2B2E0264441A900D36F08 /* amazingtalker-ios-ArthurKaoTests */,
 				8EC2B2EB264441A900D36F08 /* amazingtalker-ios-ArthurKaoUITests */,
 				8ED80C05264600900012A334 /* amazingtalker-ios-network */,
+				8EE335A626479485006DB8D6 /* amazingtalker-ios-network-watch */,
 				8ED80C0D264600910012A334 /* amazingtalker-ios-networkTests */,
+				8EE3356426479184006DB8D6 /* amazingtalker-watchOS */,
+				8EE3356726479184006DB8D6 /* amazingtalker-watchOS WatchKit App */,
+				8EE3357326479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -430,6 +687,37 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		8ED80C0C264600910012A334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE3356326479184006DB8D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE3356626479184006DB8D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE3356E26479185006DB8D6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE3357226479186006DB8D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE3358726479186006DB8D6 /* Preview Assets.xcassets in Resources */,
+				8EE3358426479186006DB8D6 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE335AD26479485006DB8D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -485,9 +773,48 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8EE3357026479186006DB8D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE3359526479246006DB8D6 /* amazingtalker_ios_ArthurKaoApp.swift in Sources */,
+				8EE3359B2647928C006DB8D6 /* PreviewScheduleProvider.swift in Sources */,
+				8EE335B826479594006DB8D6 /* ContentView.swift in Sources */,
+				8EE3359A2647928C006DB8D6 /* ScheduleState.swift in Sources */,
+				8EE3357E26479186006DB8D6 /* NotificationController.swift in Sources */,
+				8EE3358226479186006DB8D6 /* ComplicationController.swift in Sources */,
+				8EE335992647928C006DB8D6 /* NetworkScheduleProvider.swift in Sources */,
+				8EE3358026479186006DB8D6 /* NotificationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8EE335A926479485006DB8D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8EE335AA26479485006DB8D6 /* DataModel.swift in Sources */,
+				8EE335AB26479485006DB8D6 /* NetworkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		8E6B6D3C26479BAA0040D05F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EE335A626479485006DB8D6 /* amazingtalker-ios-network-watch */;
+			targetProxy = 8E6B6D3B26479BAA0040D05F /* PBXContainerItemProxy */;
+		};
+		8E6B6D3F26479C130040D05F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EE335A626479485006DB8D6 /* amazingtalker-ios-network-watch */;
+			targetProxy = 8E6B6D3E26479C130040D05F /* PBXContainerItemProxy */;
+		};
+		8E6B6D4126479C190040D05F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EE335A626479485006DB8D6 /* amazingtalker-ios-network-watch */;
+			targetProxy = 8E6B6D4026479C190040D05F /* PBXContainerItemProxy */;
+		};
 		8EC2B2E3264441A900D36F08 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8EC2B2CF264441A700D36F08 /* amazingtalker-ios-ArthurKao */;
@@ -512,6 +839,16 @@
 			isa = PBXTargetDependency;
 			target = 8ED80C05264600900012A334 /* amazingtalker-ios-network */;
 			targetProxy = 8ED80C19264600910012A334 /* PBXContainerItemProxy */;
+		};
+		8EE3356B26479184006DB8D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EE3356726479184006DB8D6 /* amazingtalker-watchOS WatchKit App */;
+			targetProxy = 8EE3356A26479184006DB8D6 /* PBXContainerItemProxy */;
+		};
+		8EE3357726479186006DB8D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8EE3357326479186006DB8D6 /* amazingtalker-watchOS WatchKit Extension */;
+			targetProxy = 8EE3357626479186006DB8D6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -797,6 +1134,7 @@
 		8ED80C1E264600910012A334 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -828,6 +1166,7 @@
 		8ED80C1F264600910012A334 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
@@ -899,6 +1238,188 @@
 			};
 			name = Release;
 		};
+		8EE3358B26479186006DB8D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_ASSET_PATHS = "\"amazingtalker-watchOS WatchKit Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = QKGBKWE8NL;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "amazingtalker-watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development *";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		8EE3358C26479186006DB8D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"amazingtalker-watchOS WatchKit Extension/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "amazingtalker-watchOS WatchKit Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-watchOS.watchkitapp.watchkitextension";
+				PRODUCT_NAME = "${TARGET_NAME}";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		8EE3358F26479186006DB8D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = QKGBKWE8NL;
+				IBSC_MODULE = amazingtalker_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "amazingtalker-watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development *";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Debug;
+		};
+		8EE3359026479186006DB8D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				IBSC_MODULE = amazingtalker_watchOS_WatchKit_Extension;
+				INFOPLIST_FILE = "amazingtalker-watchOS WatchKit App/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-watchOS.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 7.4;
+			};
+			name = Release;
+		};
+		8EE3359326479186006DB8D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = QKGBKWE8NL;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development *";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		8EE3359426479186006DB8D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-watchOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		8EE335AF26479485006DB8D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "amazingtalker-ios-network copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-network";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8EE335B026479485006DB8D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "amazingtalker-ios-network copy-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "obicat.amazingtalker-ios-network";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchsimulator watchos";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -952,6 +1473,42 @@
 			buildConfigurations = (
 				8ED80C22264600910012A334 /* Debug */,
 				8ED80C23264600910012A334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE3358A26479186006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-watchOS WatchKit Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE3358B26479186006DB8D6 /* Debug */,
+				8EE3358C26479186006DB8D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE3358E26479186006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-watchOS WatchKit App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE3358F26479186006DB8D6 /* Debug */,
+				8EE3359026479186006DB8D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE3359226479186006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-watchOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE3359326479186006DB8D6 /* Debug */,
+				8EE3359426479186006DB8D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8EE335AE26479485006DB8D6 /* Build configuration list for PBXNativeTarget "amazingtalker-ios-network-watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8EE335AF26479485006DB8D6 /* Debug */,
+				8EE335B026479485006DB8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
