@@ -40,6 +40,8 @@ class ScheduleState: ObservableObject {
     private var fetchScheduleCancellable: AnyCancellable?
     private var bag = Set<AnyCancellable>()
 
+    private let queue = DispatchQueue(label: "state.serial.queue")
+
     @Published
     var isLoading: Bool = false
 
@@ -102,6 +104,7 @@ class ScheduleState: ObservableObject {
         let dates = datesConnectable.share()
 
         dates.combineLatest(items)
+            .receive(on: queue)
             .map { [calendar = self.calendar] dates, items in
                 let today = calendar.date(from: calendar.dateComponents([.year, .month, .day], from: Date())) ?? Date()
                 let weekdaySymbols = DateFormatter().shortWeekdaySymbols
@@ -117,17 +120,51 @@ class ScheduleState: ObservableObject {
                         else { return nil }
                         let range = $0.element..<dates[$0.offset+1]
                         let now = Date()
-                        let times = items
+
+                        let validTimes = items.lazy
                             .filter { item in
                                 (item.range.lowerBound > now) || !self.hidePassItems
                             }
                             .filter { item in
-                                item.range.lowerBound >= range.lowerBound &&
-                                    item.range.upperBound <= range.upperBound
+                                range.overlaps(item.range)
                             }
-                            .map { item in
-                                WeekdayItem.Time(text: timeFormatter.string(from: item.range.lowerBound), isBooked: item.booked)
+
+                        let emptyTimes = validTimes.filter { !$0.booked }
+                        let bookedTimes = validTimes.filter(\.booked)
+
+                        let bookedSet = bookedTimes.reduce(into: Set<Date>()) { set, time in
+                            var start = time.range.lowerBound
+                            if start < range.lowerBound {
+                                start = range.lowerBound
                             }
+                            repeat {
+                                set.insert(start)
+                                start = start.advanced(by: 30 * 60)
+                            } while (start < time.range.upperBound) && (range.upperBound > start)
+                        }
+                        let emptySet = emptyTimes.reduce(into: Set<Date>()) { set, time in
+                            var start = time.range.lowerBound
+                            if start < range.lowerBound {
+                                start = range.lowerBound
+                            }
+                            repeat {
+                                set.insert(start)
+                                start = start.advanced(by: 30 * 60)
+                            } while (start < time.range.upperBound) && (range.upperBound > start)
+                        }
+                        // 保險起見
+                        .subtracting(bookedSet)
+
+                        let times = (
+                            emptySet.map {
+                                WeekdayItem.Time(text: timeFormatter.string(from: $0), isBooked: false)
+                            } +
+                            bookedSet.map {
+                                WeekdayItem.Time(text: timeFormatter.string(from: $0), isBooked: true)
+                            }
+                        ).sorted { lhs, rhs in
+                            lhs.text < rhs.text
+                        }
 
                         return WeekdayItem(
                             date: $0.element,
@@ -138,6 +175,7 @@ class ScheduleState: ObservableObject {
                         )
                     }
             }
+            .receive(on: DispatchQueue.main)
             .assign(to: \.weekdayItems, on: self)
             .store(in: &bag)
 
