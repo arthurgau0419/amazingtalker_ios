@@ -12,6 +12,22 @@ struct ContentView: View {
     @ObservedObject
     var state: ScheduleState
 
+    let appearTransition = AnyTransition.opacity
+
+    let backTransition = AnyTransition.asymmetric(insertion: .move(edge: .leading), removal: .identity)
+
+    let nextTransition = AnyTransition.asymmetric(insertion: .move(edge: .trailing), removal: .identity)
+
+    func pageTransition(for diff: Int) -> AnyTransition {
+        if state.pageVector == 0 {
+            return appearTransition
+        } else if state.pageVector > 0 {
+            return nextTransition
+        } else {
+            return backTransition
+        }
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -46,30 +62,34 @@ struct ContentView: View {
                     Text("timezone_label_text \(state.timeZoneName)")
                         .font(.system(size: 12))
                 }
-                HStack(alignment: .top, spacing: 4) {
-                    ForEach(state.weekdayItems) { weekdayItem in
-                        VStack(alignment: .center) {
-                            Rectangle()
-                                .frame(height: 2)
-                                .foregroundColor(weekdayItem.times.isEmpty ? Color("DisableColor"): .accentColor)
-                            Group {
-                                Text(weekdayItem.weekdaySymbol)
-                                Text(weekdayItem.day)
-                            }
+                if state.weekdayItemsAnimationFlag {
+                    HStack(alignment: .top, spacing: 4) {
+                        ForEach(state.weekdayItems) { weekdayItem in
+                            VStack(alignment: .center) {
+                                Rectangle()
+                                    .frame(height: 2)
+                                    .foregroundColor(weekdayItem.times.isEmpty ? Color("DisableColor"): .accentColor)
+                                Group {
+                                    Text(weekdayItem.weekdaySymbol)
+                                    Text(weekdayItem.day)
+                                }
                                 .lineLimit(1)
-                            ForEach(weekdayItem.times) { time in
-                                if !state.isLoading {
-                                    Text(time.text).lineLimit(1)
-                                        .font(.system(size: 13))
-                                        .foregroundColor(time.isBooked ? Color("DisableColor"): .accentColor)
-                                        .padding(.vertical, 1)
+                                ForEach(weekdayItem.times) { time in
+                                    if !state.isLoading {
+                                        Text(time.text).lineLimit(1)
+                                            .font(.system(size: 13))
+                                            .foregroundColor(time.isBooked ? Color("DisableColor"): .accentColor)
+                                            .padding(.vertical, 1)
+                                    }
                                 }
                             }
+                            .opacity(weekdayItem.isEnable ? 1 : 182/255)
                         }
-                        .opacity(weekdayItem.isEnable ? 1 : 182/255)
                     }
+                    .transition(pageTransition(for: state.pageVector))
                 }
             }
+            .animation(Animation.easeInOut(duration: 0.15), value: state.weekdayItemsAnimationFlag)
             .padding()
         }
         .gesture(
@@ -90,7 +110,7 @@ struct ContentView: View {
                 }
             }
             .transition(.opacity)
-            .animation(.easeInOut)
+            .animation(.easeInOut(duration: 0.15))
         )
         .progressViewStyle(CircularProgressViewStyle())
         .background(Color(UIColor.systemBackground).ignoresSafeArea())

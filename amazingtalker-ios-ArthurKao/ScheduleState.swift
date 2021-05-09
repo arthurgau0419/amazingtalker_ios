@@ -32,6 +32,9 @@ class ScheduleState: ObservableObject {
     @Published
     var weekOfYear: Int
 
+    @Published
+    var pageVector: Int = 0
+
     private var items = CurrentValueSubject<[ScheduleItemType], Never>([])
 
     private var fetchScheduleCancellable: AnyCancellable?
@@ -42,6 +45,9 @@ class ScheduleState: ObservableObject {
 
     @Published
     var weekdayItems: [WeekdayItem] = []
+
+    @Published
+    var weekdayItemsAnimationFlag = false
 
     @Published
     var rangeText: String = ""
@@ -135,6 +141,7 @@ class ScheduleState: ObservableObject {
             .store(in: &bag)
 
         dates.map { $0.prefix(7) }
+            .receive(on: queue)
             .compactMap { dates in
                 guard let from = dates.first, let to = dates.last else { return nil }
                 let formatter = DateFormatter()
@@ -144,6 +151,7 @@ class ScheduleState: ObservableObject {
                 let toDate = formatter.string(from: to)
                 return [fromDate, toDate].joined(separator: " - ")
             }
+            .receive(on: DispatchQueue.main)
             .assign(to: \.rangeText, on: self)
             .store(in: &bag)
 
@@ -157,14 +165,25 @@ class ScheduleState: ObservableObject {
             .assign(to: \.timeZoneName, on: self)
             .store(in: &bag)
 
+        $weekdayItems
+            .filter { !$0.isEmpty }
+            .throttle(for: .milliseconds(150), scheduler: DispatchQueue.main, latest: false)
+            .flatMap { _ in
+                Just(false).merge(with: Just(true).delay(for: .milliseconds(150), scheduler: DispatchQueue.main))
+            }
+            .assign(to: \.weekdayItemsAnimationFlag, on: self)
+            .store(in: &bag)
+
         datesConnectable.connect().store(in: &bag)
     }
 
     func nextWeek() {
+        pageVector = 1
         weekOfYear += 1
     }
 
     func previousWeek() {
+        pageVector = -1
         weekOfYear -= 1
     }
 }
