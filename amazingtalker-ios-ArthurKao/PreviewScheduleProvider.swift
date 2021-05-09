@@ -16,7 +16,7 @@ import Combine
 
 struct PreviewScheduleItem: ScheduleItemType {
     let booked: Bool
-    let range: ClosedRange<Date>
+    let range: Range<Date>
 }
 
 struct PreviewScheduleProvider: ScheduleProviderType {

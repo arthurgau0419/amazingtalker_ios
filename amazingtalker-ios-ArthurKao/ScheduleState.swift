@@ -10,7 +10,7 @@ import Combine
 
 protocol ScheduleItemType {
     var booked: Bool { get }
-    var range: ClosedRange<Date> { get }
+    var range: Range<Date> { get }
 }
 
 protocol ScheduleProviderType {

@@ -25,15 +25,15 @@ public struct Schedule: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         var availableContainer = try container.nestedUnkeyedContainer(forKey: .available)
         var bookedContainer = try container.nestedUnkeyedContainer(forKey: .booked)
-        var availableDates = Set<ClosedRange<Date>>()
-        var bookedDates = Set<ClosedRange<Date>>()
+        var availableDates = Set<Range<Date>>()
+        var bookedDates = Set<Range<Date>>()
 
-        let decodeDates: ((inout UnkeyedDecodingContainer, inout Set<ClosedRange<Date>>) throws -> Void) = { rangesContainer, set in
+        let decodeDates: ((inout UnkeyedDecodingContainer, inout Set<Range<Date>>) throws -> Void) = { rangesContainer, set in
             while !rangesContainer.isAtEnd {
                 let itemContainer = try rangesContainer.nestedContainer(keyedBy: ItemKeys.self)
                 let start = try itemContainer.decode(Date.self, forKey: .start)
                 let end = try itemContainer.decode(Date.self, forKey: .end)
-                set.insert(start...end)
+                set.insert(start..<end)
             }
         }
 
@@ -49,14 +49,14 @@ public struct Schedule: Decodable {
 
 public struct ScheduleItem {
     public let booked: Bool
-    public let range: ClosedRange<Date>
+    public let range: Range<Date>
 
     public init(booked: Bool, start: Date, end: Date) {
         self.booked = booked
-        self.range = start...end
+        self.range = start..<end
     }
 
-    public init(booked: Bool, range: ClosedRange<Date>) {
+    public init(booked: Bool, range: Range<Date>) {
         self.booked = booked
         self.range = range
     }
