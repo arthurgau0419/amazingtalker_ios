@@ -20,8 +20,15 @@ class ScheduleStateTests: XCTestCase {
     }()
     var state: ScheduleState!
 
+    private func waitForAnimation() {
+        let expectation = self.expectation(description: "wait for animation")
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.3) { expectation.fulfill() }
+        waitForExpectations(timeout: 1, handler: nil)
+    }
+
     override func setUp() {
         state = ScheduleState(referenceDate: referenceDate, hidePassItems: false, provider: PreviewScheduleProvider())
+        waitForAnimation()
     }
 
     func testStateWeekdayItemsAndTimes() {
@@ -38,16 +45,18 @@ class ScheduleStateTests: XCTestCase {
         XCTAssertEqual(state.weekdayItems[6].day, "28")
 
         XCTAssertEqual(state.weekdayItems[0].times.count, 0)
-        XCTAssertEqual(state.weekdayItems[1].times.count, 1)
+        XCTAssertEqual(state.weekdayItems[1].times.count, 15)
         XCTAssertEqual(state.weekdayItems[2].times.count, 0)
-        XCTAssertEqual(state.weekdayItems[3].times.count, 2)
-        XCTAssertEqual(state.weekdayItems[4].times.count, 0)
-        XCTAssertEqual(state.weekdayItems[5].times.count, 0)
-        XCTAssertEqual(state.weekdayItems[6].times.count, 3)
+        XCTAssertEqual(state.weekdayItems[3].times.count, 48)
+        XCTAssertEqual(state.weekdayItems[4].times.count, 48)
+        XCTAssertEqual(state.weekdayItems[5].times.count, 48)
+        XCTAssertEqual(state.weekdayItems[6].times.count, 48)
     }
 
     func testPreviousPage() {
         state.previousWeek()
+        waitForAnimation()
+
         XCTAssertEqual(state.weekdayItems.count, 7, "一週應該有七天")
         XCTAssertEqual(state.rangeText, "2020/11/15 - 21")
         XCTAssertFalse(state.timeZoneName.isEmpty)
@@ -71,6 +80,8 @@ class ScheduleStateTests: XCTestCase {
 
     func testNextPage() {
         state.nextWeek()
+        waitForAnimation()
+
         XCTAssertEqual(state.weekdayItems.count, 7, "一週應該有七天")
         XCTAssertEqual(state.rangeText, "2020/11/29 - 05")
         XCTAssertFalse(state.timeZoneName.isEmpty)
@@ -83,7 +94,7 @@ class ScheduleStateTests: XCTestCase {
         XCTAssertEqual(state.weekdayItems[5].day, "04")
         XCTAssertEqual(state.weekdayItems[6].day, "05")
 
-        XCTAssertEqual(state.weekdayItems[0].times.count, 0)
+        XCTAssertEqual(state.weekdayItems[0].times.count, 2)
         XCTAssertEqual(state.weekdayItems[1].times.count, 0)
         XCTAssertEqual(state.weekdayItems[2].times.count, 0)
         XCTAssertEqual(state.weekdayItems[3].times.count, 0)
