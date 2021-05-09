@@ -35,6 +35,9 @@ class ScheduleState: ObservableObject {
     @Published
     var pageVector: Int = 0
 
+    @Published
+    var canGoBack: Bool = true
+
     private var items = CurrentValueSubject<[ScheduleItemType], Never>([])
 
     private var fetchScheduleCancellable: AnyCancellable?
@@ -92,6 +95,25 @@ class ScheduleState: ObservableObject {
             .multicast(subject: items)
             .connect()
             .store(in: &bag)
+
+        Publishers.CombineLatest(
+            $weekOfYear
+                .compactMap { [calendar = self.calendar, year = self.year] weekOfYear in
+                    DateComponents(calendar: calendar, weekOfYear: weekOfYear - 1, yearForWeekOfYear: year).date
+                },
+            $weekOfYear
+                .compactMap { [calendar = self.calendar, year = self.year] weekOfYear in
+                    DateComponents(calendar: calendar, weekOfYear: weekOfYear, yearForWeekOfYear: year).date
+                }
+        )
+        .map { ($0.0 ..< $0.1) as Range<Date> }
+        .map { range -> Bool in
+            let future = Date()...
+            return future.contains(range.lowerBound) || future.contains(range.upperBound)
+        }
+        .map { $0 || !self.hidePassItems }
+        .assign(to: \.canGoBack, on: self)
+        .store(in: &bag)
     }
 
     func observeItems() {

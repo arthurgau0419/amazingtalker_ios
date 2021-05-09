@@ -30,6 +30,8 @@ struct ContentView: View {
                 }) {
                     Image(systemName: "chevron.backward")
                 }
+                .disabled(!state.canGoBack)
+                .opacity(state.canGoBack ? 1 : 0.3)
                 Button(action: {
                     state.nextWeek()
                 }) {

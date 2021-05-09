@@ -36,17 +36,21 @@ struct ContentView: View {
                     .font(.title)
                 HStack {
                     HStack(spacing: 0) {
-                        Group {
-                            Button(action: {
-                                state.previousWeek()
-                            }) {
-                                Image(systemName: "chevron.backward")
-                            }
-                            Button(action: {
-                                state.nextWeek()
-                            }) {
-                                Image(systemName: "chevron.right")
-                            }
+                        Button(action: {
+                            state.previousWeek()
+                        }) {
+                            Image(systemName: "chevron.backward")
+                        }
+                        .padding(.vertical, 4)
+                        .padding(.horizontal, 8)
+                        .foregroundColor(Color.gray)
+                        .border(Color.gray)
+                        .disabled(!state.canGoBack)
+                        .opacity(state.canGoBack ? 1 : 0.3)
+                        Button(action: {
+                            state.nextWeek()
+                        }) {
+                            Image(systemName: "chevron.right")
                         }
                         .padding(.vertical, 4)
                         .padding(.horizontal, 8)
